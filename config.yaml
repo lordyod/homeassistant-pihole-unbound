@@ -1,0 +1,55 @@
+name: Pihole-Unbound
+version: "1.0.0"
+slug: "pihole-unbound"
+description: Pihole and Unbound DNS server
+url: "https://github.com/lordyod/homeassistant-pihole-unbound/"
+arch:
+  - armhf
+  - armv7
+  - aarch64
+  - amd64
+init: false
+startup: application
+webui: "http://[HOST]:[PORT:80]/admin"
+boot: auto
+ports:
+  443/tcp: 443
+  53/tcp: 53
+  53/udp: 53
+  80/tcp: null
+  5335/tcp: null
+  22/tcp: null
+ports_description:
+  443/tcp: 443
+  53/tcp: 53
+  53/udp: 53
+  80/tcp: null
+  5335/tcp: null
+  22/tcp: null
+watchdog: "http://[HOST]:[PORT:80]/admin"
+option:
+  FTLCONF_REPLY_ADDR4: null
+  TZ: "UTC"
+  WEBPASSWORD: null
+  REV_SERVER: false
+  REV_SERVER_DOMAIN: null
+  REV_SERVER_TARGET: null
+  REV_SERVER_CIDR: null
+  HOSTNAME: "pihole"
+  DOMAIN_NAME: "pihole.local"
+  PIHOLE_WEBPORT: 80
+  WEBTHEME: "default-light"
+  DNSSEC: true
+schema:
+  FTLCONF_REPLY_ADDR4: "str?"
+  TZ: "str?"
+  WEBPASSWORD: "str?"
+  REV_SERVER: "bool?"
+  REV_SERVER_DOMAIN: "str?"
+  REV_SERVER_TARGET: "str?"
+  REV_SERVER_CIDR: "str?"
+  HOSTNAME: "str?"
+  DOMAIN_NAME: "str?"
+  PIHOLE_WEBPORT: "int?"
+  WEBTHEME: "str?"
+  DNSSEC: "bool?"
