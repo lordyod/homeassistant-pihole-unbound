@@ -20,12 +20,12 @@ ports:
   5335/tcp: null
   22/tcp: null
 ports_description:
-  443/tcp: 443
-  53/tcp: 53
-  53/udp: 53
-  80/tcp: null
-  5335/tcp: null
-  22/tcp: null
+  443/tcp: "Webserver access"
+  53/tcp: "DNS over TCP"
+  53/udp: "DNS over UDP"
+  80/tcp: "Webserver (optional)"
+  5335/tcp: "Unbound access (optional)"
+  22/tcp: "SSH access (optional)"
 watchdog: "http://[HOST]:[PORT:80]/admin"
 option:
   FTLCONF_REPLY_ADDR4: null
